@@ -8,7 +8,5 @@
 		<item>Update A Todo</item>
 		<item>Insert Multiple Todos</item>
 		<item>Find Completed Todos</item>
-		<item>Get All Using LiveData Only</item>
-<!--		<item>Get All Using ViewModel And LiveData Only</item>-->
 	</string-array>
 </resources>

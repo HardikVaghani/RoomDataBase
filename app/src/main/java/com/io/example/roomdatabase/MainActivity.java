@@ -3,6 +3,7 @@ package com.io.example.roomdatabase;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
+    TodoViewModel todoViewModel;
 
     EditText text;
     TextView lab, textView1;
@@ -38,8 +40,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        todoViewModel = new ViewModelProvider(this).get(TodoViewModel.class);
         initialize();
 
+        todoViewModel.getAllTodos().observe(this, new Observer<List<Todo>>() {
+            @Override
+            public void onChanged(List<Todo> todoList) {
+                Log.i(TAG, "onChanged: "+todoList.toString());
+                Log.i(TAG, "onChanged: "+todoList.size());
+            }
+        });
 
         //Populate ArrayAdapter using string array and a spinner layout that we will define
         chooseQueryAdapter = ArrayAdapter.createFromResource(this, R.array.array_choose_query, R.layout.spinner_layout);
@@ -106,16 +116,7 @@ public class MainActivity extends AppCompatActivity {
                             query = "Find Completed Todos";
 
                             break;
-
-                        case "Get All Using LiveData Only":
-                            text.setVisibility(View.GONE);
-                            textView1.setVisibility(View.GONE);
-                            text.setInputType(InputType.TYPE_CLASS_TEXT);
-                            query = "Get All Using LiveData Only";
-
-                            break;
-
-                        case "Insert Single Todo":
+                        case "Insert Single Todo":// this is merge  2 things like this case nad default
 
                         default:
                             text.setVisibility(View.VISIBLE);
@@ -181,12 +182,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "Find Completed Todos":
                         findCompletedTodos(v);
-                        break;
-                    case "Get All Using LiveData Only":
-                        if (isClicked) { //only one time working
-                            isClicked = false;
-                            getAllUsingLiveDataOnly(v);
-                        }
                         break;
                 }
             }
@@ -335,25 +330,6 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
-    public void getAllUsingLiveDataOnly(View view) {
-        LiveData<List<Todo>> todoList = TodoRoomDatabase.getInstance(getApplicationContext())
-                .todoDao()
-                .findTodosUsingLiveDataOnly();
-
-        todoList.observe(this, new Observer<List<Todo>>() { // attach to onCreate(); and onStart();
-            @Override
-            public void onChanged(List<Todo> todoList) {
-                Log.i(TAG, "onChanged: " + todoList.toString());
-                Log.i(TAG, "onChanged: " + todoList.size());
-            }
-        });
-
-        lab.setText("Check in logcat!");
-        text.setText("");
-//        todoList.removeObservers(this); // in onStop(); and onDestroy();
-    }
-
-
     private void initialize() {
         chooseQuerySpinner = findViewById(R.id.spinner_format);
         textView1 = findViewById(R.id.text_1);
@@ -375,4 +351,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-//https://www.youtube.com/playlist?list=PLdHg5T0SNpN3CMNtsd5KGaiBtzhTGIwtC

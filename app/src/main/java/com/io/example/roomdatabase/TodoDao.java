@@ -33,6 +33,5 @@ public interface TodoDao {
     List<Todo> getAllCompletedTodos();
 
     @Query("SELECT * FROM todo_table")
-    LiveData<List<Todo>> findTodosUsingLiveDataOnly();
-
+    LiveData<List<Todo>> findAllTodos();
 }
