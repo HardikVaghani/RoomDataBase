@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name = "array_choose_query" >
+		<item>Insert Single Todo</item>
+		<item>Get Single Todo</item>
+		<item>Get All Todos</item>
+		<item>Delete A Todo</item>
+		<item>Update A Todo</item>
+		<item>Insert Multiple Todos</item>
+		<item>Find Completed Todos</item>
+		<item>Get All Using LiveData Only</item>
+<!--		<item>Get All Using ViewModel And LiveData Only</item>-->
+	</string-array>
+</resources>
