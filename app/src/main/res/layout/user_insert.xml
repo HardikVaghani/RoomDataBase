@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Insert_Single_User"
+    android:layout_width="match_parent"
+    android:background="@drawable/border"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+    <!--    tools:showIn="@layout/activity_main"-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!--            firstname-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="First Name"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/user_insert_firstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="16"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName|textCapSentences"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            lastname-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/user_insert_lastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="16"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName|textCapSentences"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            display name-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Display Name"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/user_insert_displayName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="16"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            username-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/user_insert_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="16"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/user_insert_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="16"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            phone -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/user_insert_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="16"
+                        android:importantForAutofill="no"
+                        android:inputType="phone"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            password-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="password"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/user_insert_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="16"
+                        android:importantForAutofill="no"
+                        android:inputType="textPassword"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            date of birth-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <TextView
+                        android:id="@+id/user_insert_dateOfBirth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            gender-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <RadioGroup
+                        android:id="@+id/user_insert_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/user_insert_radioMale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:checked="true"
+                            android:text="Male"
+                            android:textColor="#ff6d6e71"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/user_insert_radioFemale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Female"
+                            android:textColor="#ff6d6e71"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/user_insert_radioOther"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Other"
+                            android:textColor="#ff6d6e71"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            image-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Image"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:padding="0dp">
+
+                        <EditText
+                            android:id="@+id/user_insert_image"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ems="16"
+                            android:gravity="left"
+                            android:importantForAutofill="no"
+                            android:inputType="textUri"
+                            android:padding="20dp"
+                            android:paddingTop="10dp"
+                            android:textAllCaps="true"
+                            android:textColor="#000000"
+                            android:textColorHint="#43515050"
+                            android:textSize="20sp"
+                            tools:ignore="VisualLintTextFieldSize" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/border"
+                        android:layout_marginBottom="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:id="@+id/user_insert_image_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="right"
+                            android:drawableEnd="@drawable/baseline_image_24"
+                            android:padding="5dp"
+                            android:text="Choose" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            description-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/user_insert_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="16"
+                        android:importantForAutofill="no"
+                        android:inputType="textLongMessage|textCapSentences"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            status-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/user_insert_switchCompat_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:padding="20dp"
+                        android:paddingTop="10dp"
+                        android:text="Active"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            submit-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <Button
+                        android:id="@+id/user_insert_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Save to Room"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textColorHint="#43515050"
+                        android:textSize="20sp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

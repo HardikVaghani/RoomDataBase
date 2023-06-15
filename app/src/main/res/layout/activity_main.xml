@@ -1,150 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android = "http://schemas.android.com/apk/res/android"
-                                                   xmlns:app = "http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools = "http://schemas.android.com/tools"
-                                                   android:layout_width = "match_parent"
-                                                   android:layout_height = "match_parent"
-                                                   tools:context = ".MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-	<ScrollView
-		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:gravity="center"
-			android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-			<Space
-				android:layout_width="match_parent"
-				android:layout_height="40dp"
-				android:padding="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:paddingStart="20dp"
-				android:paddingEnd="20dp"
-				android:text="Choose Query"
-				android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Query"
+                    android:textSize="16sp" />
 
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:background="@drawable/border"
-				android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical">
 
-				<Spinner
-					android:id="@+id/spinner_format"
-					android:layout_width="match_parent"
-					android:layout_height="48dp"
-					android:background="@drawable/border"
-					android:splitMotionEvents="true"
-					tools:ignore="SpeakableTextPresentCheck" />
+                    <Spinner
+                        android:id="@+id/spinner_format"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/border"
+                        android:splitMotionEvents="true"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
-			</LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
 
-			<Space
-				android:layout_width="match_parent"
-				android:layout_height="40dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+<!--            Insert_Single_User-->
+            <LinearLayout
+                android:id="@+id/Insert_Single_User"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-			<TextView
-				android:id="@+id/text_1"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:paddingStart="20dp"
-				android:paddingEnd="20dp"
-				android:text="Insert Text"
-				android:textSize="16sp" />
+                <include layout="@layout/user_insert" />
+            </LinearLayout>
+<!--            Get_Single_User-->
+            <LinearLayout
+                android:id="@+id/Get_Single_User"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:background="@drawable/border"
-				android:orientation="vertical"
-				android:padding="0dp">
+                <include layout="@layout/user_detail" />
+            </LinearLayout>
+<!--            Get_All_Users-->
+            <LinearLayout
+                android:id="@+id/Get_All_Users"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-				<EditText
-					android:id="@+id/text"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:background="@null"
-					android:ems="16"
-					android:importantForAutofill="no"
-					android:inputType="text"
-					android:padding="20dp"
-					android:paddingTop="10dp"
-					android:textColor="#000000"
-					android:textColorHint="#43515050"
-					android:textSize="20sp"
-					tools:ignore="VisualLintTextFieldSize" />
+                <include layout="@layout/user_get_all" />
+            </LinearLayout>
+<!--            Update_A_User-->
+            <LinearLayout
+                android:id="@+id/Update_A_User"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-			</LinearLayout>
+                <include layout="@layout/user_update" />
+            </LinearLayout>
+<!--            Delete_A_User-->
+            <LinearLayout
+                android:id="@+id/Delete_A_User"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-			<Space
-				android:layout_width="match_parent"
-				android:layout_height="40dp" />
+                <include layout="@layout/delete_a_user" />
+            </LinearLayout>
+<!--            Insert_Multiple_Users-->
+            <LinearLayout
+                android:id="@+id/Insert_Multiple_Users"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:background="@drawable/border"
-				android:orientation="vertical"
-				android:padding="0dp">
+                <include layout="@layout/insert_multiple_users" />
+            </LinearLayout>
+<!--            Find_Completed_Users-->
+            <LinearLayout
+                android:id="@+id/Find_Completed_Users"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-				<Button
-					android:id="@+id/b1"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:textColor="#000000"
-					android:textColorHint="#43515050"
-					android:textSize="20sp"
-					android:layout_gravity="center_horizontal"
-					android:text="Save to Room"
-					android:textAllCaps="false"
-					tools:ignore="VisualLintTextFieldSize" />
+                <include layout="@layout/get_all_active_users" />
+            </LinearLayout>
 
-			</LinearLayout>
+        </LinearLayout>
 
-			<Space
-				android:layout_width="match_parent"
-				android:layout_height="40dp"
-				 />
-
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:background="@drawable/border"
-				android:orientation="vertical"
-				android:padding="0dp">
-
-				<TextView
-					android:id="@+id/lab"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:background="@null"
-					android:ems="16"
-					android:importantForAutofill="no"
-					android:padding="20dp"
-					android:paddingTop="10dp"
-					android:textColor="#000000"
-					android:textColorHint="#43515050"
-					android:textSize="20sp"
-					tools:ignore="VisualLintTextFieldSize" />
-
-			</LinearLayout>
-
-		</LinearLayout>
-
-	</ScrollView>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

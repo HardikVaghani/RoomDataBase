@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name = "array_choose_query" >
-		<item>Insert Single Todo</item>
-		<item>Get Single Todo</item>
-		<item>Get All Todos</item>
-		<item>Delete A Todo</item>
-		<item>Update A Todo</item>
-		<item>Insert Multiple Todos</item>
-		<item>Find Completed Todos</item>
+		<item>Insert Single User</item>
+		<item>Get Single User</item>
+		<item>Get All Users</item>
+		<item>Update A User</item>
+		<item>Delete A User</item>
+<!--		<item>Insert Multiple Users</item>-->
+		<item>Find Active Users</item>
 	</string-array>
 </resources>

@@ -1,65 +1,80 @@
 package com.io.example.roomdatabase;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.ColumnInfo;
 import androidx.room.Index;
-//import androidx.room.Unique;
-import java.sql.Timestamp;
-import java.util.Date;
 
-//@Entity(tableName = "users", indices = {@Index(value = {"username", "email", "phone"}, unique = true)})
-@Entity(tableName = "users",
-        indices = {@Index(value = {"username"}, unique = true),
-                @Index(value = {"email"}, unique = true),
-                @Index(value = {"phone"}, unique = true)})
-public class UserData {
-    @PrimaryKey
+import java.sql.Date;
+import java.sql.Timestamp;
+//import androidx.room.Unique;
+
+
+@Entity(tableName = "user_table",
+        indices = {
+                @Index(value = {"user_user_name"}, unique = true),
+                @Index(value = {"user_email"}, unique = true),
+                @Index(value = {"user_phone"}, unique = true)
+        })
+public class User {
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "user_id")
     private Integer id;
 
-    @ColumnInfo(name = "firstname")
+    @ColumnInfo(name = "user_first_name")
     private String firstName;
 
-    @ColumnInfo(name = "lastname")
+    @ColumnInfo(name = "user_last_name")
     private String lastName;
 
-    @ColumnInfo(name = "displayname")
+    @ColumnInfo(name = "user_display_name")
+    @Nullable
     private String displayName;
 
-    @ColumnInfo(name = "username")
+    @ColumnInfo(name = "user_user_name")
+    @Nullable
     private String username;
 
-    @ColumnInfo(name = "email")
+    @ColumnInfo(name = "user_email")
+    @NonNull
     private String email;
 
-    @ColumnInfo(name = "phone")
+    @ColumnInfo(name = "user_phone")
+    @Nullable
     private String phone;
 
-    @ColumnInfo(name = "password")
+    @ColumnInfo(name = "user_password")
+    @NonNull
     private String password;
-
-    @ColumnInfo(name = "date_of_birth")
+    @ColumnInfo(name = "user_date_of_birth")
+    @Nullable
     private Date dateOfBirth;
 
-    @ColumnInfo(name = "gender")
+    @ColumnInfo(name = "user_gender")
+    @NonNull
     private Character gender;
 
-    @ColumnInfo(name = "image")
+    @ColumnInfo(name = "user_image")
+    @Nullable
     private String image;
 
-    @ColumnInfo(name = "description")
+    @ColumnInfo(name = "user_description")
+    @Nullable
     private String description;
 
-    @ColumnInfo(name = "status")
+    @ColumnInfo(name = "user_status")
+    @NonNull
     private boolean status;
 
-    @ColumnInfo(name = "created_at")
+    @ColumnInfo(name = "user_created_at")
     private Timestamp createdAt;
 
-    @ColumnInfo(name = "updated_at")
+    @ColumnInfo(name = "user_updated_at")
     private Timestamp updatedAt;
 
-    public UserData() {
+    public User() {
     }
 
     public Integer getId() {
@@ -182,7 +197,7 @@ public class UserData {
         this.updatedAt = updatedAt;
     }
 
-    public UserData(String firstName, String lastName, String displayName, String username, String email, String phone, String password, Date dateOfBirth, Character gender, String image, String description, boolean status, Timestamp createdAt, Timestamp updatedAt) {
+    public User(String firstName, String lastName, String displayName, String username, String email, String phone, String password, Date dateOfBirth, Character gender, String image, String description, boolean status, Timestamp createdAt, Timestamp updatedAt) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.displayName = displayName;
@@ -199,14 +214,24 @@ public class UserData {
         this.updatedAt = updatedAt;
     }
 
+    @Override
+    public String toString() {
+        return "\nUser\t{" +
+                "uId=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", displayName='" + displayName + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", gender=" + gender +
+                ", image='" + image + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }
-
-// String timestampString = LocalDateTime.ofInstant(Instant.now(), ZoneId.of("Asia/Kolkata")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-//            Timestamp timestamp;
-//            try {
-//                timestamp = new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(timestampString).getTime());
-//            } catch (ParseException e) {
-//                throw new RuntimeException(e);
-//            }
-//
-//            userDao.insertRecordUserData(new UserData("Hardik", "Vaghani", "HVaghani", "@h_vaghani", "hardik@gmail.com", "+918866335532", "Admin@123", new Date(1995, 02, 13), 'M', "image", "I am fine", true, timestamp, null));
