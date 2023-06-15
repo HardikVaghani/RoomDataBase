@@ -317,7 +317,11 @@ public class MainActivity extends AppCompatActivity {
         detailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getSingleUser(view);
+                if (detailUserId.getText() == null || detailUserId.getText().toString().equals("")) {
+                    setDetailTextNull();
+                } else {
+                    getSingleUser(view);
+                }
             }
         });
 
@@ -381,7 +385,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // for update data set in ui before change
                 Log.i(TAG, "onClick" + updateUserId.getText().toString());
-                if (updateUserId != null) {
+                if (updateUserId == null || updateUserId.getText() == null || updateUserId.getText().toString().equals("")) {
+                    setUpdateTextNull();
+
+                } else {
+
                     final User[] user = {null};
 
                     new Thread(new Runnable() {
@@ -414,7 +422,11 @@ public class MainActivity extends AppCompatActivity {
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateAUser(updateUser);
+                if (updateUserId.getText() == null || updateUserId.getText().toString().equals("")) {
+                    setUpdateTextNull();
+                } else {
+                    updateAUser(updateUser);
+                }
             }
         });
 
@@ -425,6 +437,26 @@ public class MainActivity extends AppCompatActivity {
                 deleteAUser(view);
             }
         });
+    }
+
+    private void setUpdateTextNull() {
+        updateFirstName.setText(null);
+        updateLastName.setText(null);
+        updateDisplayName.setText(null);
+        updateUsername.setText(null);
+        updateUsername.setVisibility(View.VISIBLE);
+        updateUserNameTv.setText(null);
+        updateUserNameTv.setVisibility(View.GONE);
+        updateEmail.setText(null);
+        updatePhone.setText(null);
+        updatePassword.setText(null);
+        updateDOF.setText(null);
+        updateGender.setActivated(updateRadioBtnMale.isActivated());
+        updateImage.setText(null);
+        updateDescription.setText(null);
+        updateStatus.setChecked(true);
+        updateStatus.setText(updateStatus.isActivated() ? "Active" : "InActive");
+
     }
 
     private void setUpdateViews(User user) {
@@ -455,15 +487,15 @@ public class MainActivity extends AppCompatActivity {
                 updateDOF.setText(dateOfBirth.toString());
             }
 
-            if (user.getGender() == 'm') {
+            if (user.getGender().equals('m')) {
                 update_gender_char = 'm';
-                updateGender.setActivated(updateRadioBtnMale.isActivated());
-            } else if (user.getGender() == 'f') {
+                updateGender.check(updateRadioBtnMale.getId());
+            } else if (user.getGender().equals('f')) {
                 update_gender_char = 'f';
-                updateGender.setActivated(updateRadioBtnFemale.isActivated());
+                updateGender.check(updateRadioBtnFemale.getId());
             } else {
                 update_gender_char = 'o';
-                updateGender.setActivated(updateRadioBtnOther.isActivated());
+                updateGender.check(updateRadioBtnOther.getId());
             }
 
             updateImagePath = user.getImage();
